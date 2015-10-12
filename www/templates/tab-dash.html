@@ -1,0 +1,160 @@
+<ion-view view-title="Dashboard">
+    <ion-content class="padding">
+        <form class="list">
+            <label class="item item-input">
+                <input ng-model="formData.roboNumber" ng-init="formData.roboNumber = null" type="text" placeholder="Robot Number">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Team Number" ng-model="formData.teamNumber" ng-init="formData.teamNumber = null">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Match Number" ng-model="formData.matchNum" ng-init="formData.matchNum = null">
+            </label>
+            <h3>Alliance Color</h3>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="radio" name="color" ng-model="formData.color" value="blue">
+                </label>
+                Blue
+            </li>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="radio" name="color" ng-model="formData.color" value="red">
+                </label>
+                Red
+            </li>
+            <label class="item item-input">
+                <input type="text" placeholder="Start Position" ng-model="formData.startPosition" ng-init="formData.startPosition = null">
+            </label>
+            <div class="padding">
+                <div class="input-label">
+                    Type of Bot
+                </div>
+                <select ng-model="formData.roboType" ng-init="formData.roboType = null">
+                    <option selected>Forklift</option>
+                    <option>Conveyor</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <li class="item item-toggle">
+                Bins
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" ng-model="formData.canBins" ng-init="formData.canBins = false">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <li class="item item-toggle">
+                Totes
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" ng-model="formData.canTotes" ng-init="formData.canTotes = false">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <li class="item item-toggle">
+                Noodle
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" ng-model="formData.canNoodle" ng-init="formData.canNoodle = false">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <li class="item item-toggle">
+                Break Landfill Up
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" ng-model="formData.canBreakLandfill" ng-init="formData.canBreakLandfill = false">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <li class="item item-toggle">
+                Get Bin from Step
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" ng-model="formData.canBinFromStep" ng-init="formData.canBinFromStep = false">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <div class="padding">
+                <div class="input-label">
+                    Auton
+                </div>
+                <select ng-model="formData.auton" ng-init="formData.auton = null">
+                    <option selected>Move</option>
+                    <option>Tote</option>
+                    <option>Bin</option>
+                    <option>Stack Tote</option>
+                </select>
+            </div>
+            <label class="item item-input">
+                <input ng-model="formData.human" ng-init="formData.human = null" type="text" placeholder="Human Ability">
+            </label>
+            <label class="item item-input">
+                <input ng-model="formData.stackHeight" ng-init="formData.stackHeight = null" type="text" placeholder="Stack Height">
+            </label>
+            <li class="item item-toggle">
+                Knock Over Stack
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" ng-model="formData.knockOver" ng-init="formData.knockOver = false">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <li class="item item-toggle">
+                Co-op
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" ng-model="formData.coop" ng-init="formData.coop = false">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <h3>Noodle</h3>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="radio" name="noodle" ng-model="formData.noodle" value="Ground">
+                </label>
+                Ground
+            </li>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="radio" name="noodle" ng-model="formData.noodle" value="Human">
+                </label>
+                Human
+            </li>
+            <h3>Bin Top</h3>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="radio" name="bin" ng-model="formData.bin" value="With">
+                </label>
+                With Noodle
+            </li>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="radio" name="bin" ng-model="formData.bin" value="Without">
+                </label>
+                Without Noodle
+            </li>
+            <label class="item item-input">
+                <input ng-model="formData.comments" ng-init="formData.comments = null" type="text" placeholder="Comments">
+            </label>
+        </form>
+        <button class="button button-block button-positive" ng-click="dash.submit(formData); form.resetModel()">	Submit
+        </button>
+        <button class="button button-block button-royal" ng-click="dash.resend()">
+            Resend
+        </button>
+        <button class="button button-block button-balanced" ng-click="dash.clear()">
+            Clear Everything
+        </button>
+        <h2>Form Data</h2>
+        <pre>{{forms | json}}</pre>
+    </ion-content>
+</ion-view>

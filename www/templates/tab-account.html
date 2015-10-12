@@ -1,0 +1,25 @@
+<ion-view view-title="Account">
+  <ion-content class = "padding">
+    <ion-list>
+    <ion-toggle  ng-model="settings.enableFriends">
+        Enable Friends
+    </ion-toggle>
+    <h3>Type in the URL here...</h3>
+    <label class="item item-input">
+
+    <input type="text" placeholder="URL" ng-model = "url2">
+  </label>
+  <button class="button button-block button-positive" ng-click = "updateUrl(url2)">
+  Change Url
+</button>
+<h3>Type in your name...</h3>
+    <label class="item item-input">
+
+    <input type="text" placeholder="Name" ng-model = "name">
+  </label>
+  <button class="button button-block button-positive" ng-click = "updateName(name)">
+  Change Name
+</button>
+    </ion-list>
+  </ion-content>
+</ion-view>
